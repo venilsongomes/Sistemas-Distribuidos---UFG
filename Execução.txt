@@ -1,0 +1,4 @@
+            sendMessage("Use o formato '@username:sua_mensagem' para chat privado.");
+            sendMessage("Use o formato '#nomedogrupo:sua_mensagem' para chat em grupo.");
+            sendMessage("Comandos de grupo: /creategroup <nome>, /joingroup <nome>");
+            sendMessage("Comandos de arquivo: /sendfile @username <path> ou /sendfile #grupo <path>");
