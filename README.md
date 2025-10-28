@@ -4,23 +4,23 @@ Este projeto implementa um sistema de chat cliente-servidor em Java, utilizando 
 
 A aplicação atende aos requisitos funcionais de troca de mensagens privadas, conversas em grupo e transferência de arquivos.
 
-Arquitetura e Decisões Técnicas
+**Arquitetura e Decisões Técnicas**
 
-1. Modelo Cliente-Servidor
+**1. Modelo Cliente-Servidor**
 A arquitetura é baseada no clássico modelo cliente-servidor.
 
-Servidor (ChatServer.java): Atua como o hub central. Ele é responsável por aceitar conexões de múltiplos clientes, gerenciar sessões de usuários, administrar grupos e rotear todas as mensagens e arquivos para os destinatários corretos. Ele utiliza um ClientHandler para cada cliente conectado.
+**Servidor (ChatServer.java):** Atua como o hub central. Ele é responsável por aceitar conexões de múltiplos clientes, gerenciar sessões de usuários, administrar grupos e rotear todas as mensagens e arquivos para os destinatários corretos. Ele utiliza um ClientHandler para cada cliente conectado.
 
-Cliente (ChatClient.java): É a aplicação que o usuário final executa. Ele se conecta ao servidor, permite que o usuário se identifique e fornece a interface (baseada em texto) para enviar e receber dados.
+**Cliente (ChatClient.java):** É a aplicação que o usuário final executa. Ele se conecta ao servidor, permite que o usuário se identifique e fornece a interface (baseada em texto) para enviar e receber dados.
 
-2. Protocolo de Comunicação: TCP
+**2. Protocolo de Comunicação:** TCP
 A implementação utiliza Sockets TCP (Transmission Control Protocol). A escolha foi feita com base nos seguintes critérios técnicos:
 
-Confiabilidade: O TCP é um protocolo orientado à conexão que garante a entrega de todos os pacotes de dados. Para um chat, é crucial que nenhuma mensagem ou parte de um arquivo seja perdida durante a transmissão.
+**Confiabilidade:** O TCP é um protocolo orientado à conexão que garante a entrega de todos os pacotes de dados. Para um chat, é crucial que nenhuma mensagem ou parte de um arquivo seja perdida durante a transmissão.
 
-Ordenação: O TCP garante que os pacotes de dados cheguem na mesma ordem em que foram enviados. Isso é fundamental para que as mensagens de um diálogo façam sentido e para que os arquivos sejam reconstruídos corretamente no lado do receptor.
+**Ordenação:** O TCP garante que os pacotes de dados cheguem na mesma ordem em que foram enviados. Isso é fundamental para que as mensagens de um diálogo façam sentido e para que os arquivos sejam reconstruídos corretamente no lado do receptor.
 
-3. Gerenciamento de Concorrência: Multithreading
+**3. Gerenciamento de Concorrência:** Multithreading
 O servidor foi projetado para ser multithreaded.
 
 Ao receber uma nova conexão de cliente, a thread principal do servidor cria e inicia uma nova thread (ClientHandler) dedicada exclusivamente a esse cliente.
