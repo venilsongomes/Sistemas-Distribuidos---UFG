@@ -29,33 +29,33 @@ Isso permite que o servidor gerencie múltiplas conexões simultaneamente sem qu
 
 Para garantir a segurança no acesso a estruturas de dados compartilhadas (como os mapas de clientes e grupos), foram utilizadas coleções do pacote java.util.concurrent, como ConcurrentHashMap, que são seguras para uso em ambientes com múltiplas threads (thread-safe).
 
-Como Executar o Sistema
+** Como Executar o Sistema** 
 Pré-requisitos: JDK (Java Development Kit) 8 ou superior instalado e configurado no PATH do sistema.
 
-Passo 1: Compilar os Arquivos
+** Passo 1:**  Compilar os Arquivos
 Abra um terminal ou prompt de comando.
 
 Navegue até o diretório onde você salvou os arquivos .java.
 
 Compile todos os arquivos com o seguinte comando:
 
-javac *.java
+** javac *.java** 
 
 Isso irá gerar os arquivos .class correspondentes.
 
-Passo 2: Iniciar o Servidor
+** Passo 2:**  Iniciar o Servidor
 No mesmo terminal, execute o servidor:
 
-java ChatServer
+** java ChatServer** 
 
 O servidor será iniciado e exibirá a mensagem: [*] Servidor de chat iniciando na porta 55555.... Ele está pronto para aceitar conexões.
 
-Passo 3: Iniciar Clientes
+** Passo 3:**  Iniciar Clientes
 Abra um novo terminal para cada cliente que você deseja conectar.
 
 Navegue até o mesmo diretório onde os arquivos .class foram gerados.
 
-Execute o script do cliente:
+** Execute o script do cliente:** 
 
 java ChatClient
 
