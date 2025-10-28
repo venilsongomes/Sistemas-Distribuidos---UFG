@@ -1,4 +1,4 @@
-Sistema de Chat Distribuído com Sockets em Java
+**Sistema de Chat Distribuído com Sockets em Java**
 
 Este projeto implementa um sistema de chat cliente-servidor em Java, utilizando sockets para comunicação em rede.
 
